@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Smart Medicine and Patient Safety System"
+    >
+
+    <title>
+        MediSafe — Smart Medicine & Patient Safety
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                +
+            </div>
+
+            <div>
+                <h1>MediSafe</h1>
+                <span>Patient Safety</span>
+            </div>
+
+        </div>
+
+        <nav>
+
+            <button
+                class="nav-item active"
+                data-section="dashboard"
+            >
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="patients"
+            >
+                <span>♙</span>
+                Patients
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="medications"
+            >
+                <span>▣</span>
+                Medications
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="history"
+            >
+                <span>◷</span>
+                History
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="security-box">
+
+                <div class="security-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Your data is protected
+                    </strong>
+
+                    <small>
+                        Secure patient management
+                    </small>
+
+                </div>
+
+            </div>
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                Sign out
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <div class="mobile-brand">
+                    MediSafe
+                </div>
+
+                <p class="eyebrow">
+                    SMART MEDICINE MANAGEMENT
+                </p>
+
+                <h2 id="pageTitle">
+                    Dashboard
+                </h2>
+
+            </div>
+
+            <div class="user-area">
+
+                <div class="notification">
+                    🔔
+                </div>
+
+                <div class="user-avatar">
+                    U
+                </div>
+
+                <div class="user-info">
+
+                    <strong id="userName">
+                        User
+                    </strong>
+
+                    <span id="userRole">
+                        Patient
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        
+
+        <section
+            id="authScreen"
+            class="auth-screen"
+        >
+
+            <div class="auth-card">
+
+                <div class="auth-logo">
+                    +
+                </div>
+
+                <h2>
+                    Welcome to MediSafe
+                </h2>
+
+                <p>
+                    Smart medication management
+                    and patient safety.
+                </p>
+
+                <div
+                    id="authMessage"
+                    class="message"
+                ></div>
+
+
+                <form id="loginForm">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Sign in
+                    </button>
+
+                </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <button
+                    id="showRegister"
+                    class="secondary-button"
+                >
+                    Create an account
+                </button>
+
+            </div>
+
+        </section>
+
+
+        
+
+        <section
+            id="registerScreen"
+            class="auth-screen hidden"
+        >
+
+            <div class="auth-card">
+
+                <div class="auth-logo">
+                    +
+                </div>
+
+                <h2>
+                    Create your account
+                </h2>
+
+                <p>
+                    Start managing medications safely.
+                </p>
+
+                <div
+                    id="registerMessage"
+                    class="message"
+                ></div>
+
+                <form id="registerForm">
+
+                    <label>
+                        Full name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Your full name"
+                        required
+                    >
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="At least 8 characters"
+                        minlength="8"
+                        required
+                    >
+
+                    <label>
+                        Account type
+                    </label>
+
+                    <select id="registerRole">
+
+                        <option value="patient">
+                            Patient
+                        </option>
+
+                        <option value="caregiver">
+                            Caregiver
+                        </option>
+
+                        <option value="hospital">
+                            Hospital / Clinical Staff
+                        </option>
+
+                    </select>
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Create account
+                    </button>
+
+                </form>
+
+                <button
+                    id="showLogin"
+                    class="text-button"
+                >
+                    Already have an account? Sign in
+                </button>
+
+            </div>
+
+        </section>
+
+
+        
+
+        <div
+            id="application"
+            class="application hidden"
+        >
+
+            
+
+            <section
+                id="dashboardSection"
+                class="section"
+            >
+
+                <div class="welcome">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            GOOD TO SEE YOU
+                        </p>
+
+                        <h2>
+                            Stay on top of every dose.
+                        </h2>
+
+                        <p>
+                            Manage patients, medications,
+                            schedules and safety records
+                            from one place.
+                        </p>
+
+                    </div>
+
+                    <div class="welcome-icon">
+                        💊
+                    </div>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ♙
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Patients
+                            </span>
+
+                            <strong id="patientCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ▣
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Medications
+                            </span>
+
+                            <strong id="medicationCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon warning">
+                            !
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Safety alerts
+                            </span>
+
+                            <strong>
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon success">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Adherence
+                            </span>
+
+                            <strong>
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TODAY'S MEDICATION SCHEDULE -->
+                <div class="schedule-section">
+
+                    <div class="section-heading schedule-heading">
+
+                        <div>
+                            <p class="eyebrow">
+                                TODAY'S MEDICATIONS
+                            </p>
+
+                            <h2>
+                                Medication Schedule
+                            </h2>
+                        </div>
+
+                        <div
+                            class="today-date"
+                            id="todayDate"
+                        ></div>
+
+                    </div>
+
+                    <div
+                        id="todaySchedule"
+                        class="schedule-list"
+                    >
+                        <div class="schedule-empty">
+
+                            <div class="empty-icon">
+                                💊
+                            </div>
+
+                            <h4>
+                                No medication schedule
+                            </h4>
+
+                            <p>
+                                Add medication schedules to
+                                see today's doses here.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="content-grid">
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    PATIENTS
+                                </span>
+
+                                <h3>
+                                    Your patients
+                                </h3>
+
+                            </div>
+
+                            <button
+                                class="small-button"
+                                id="dashboardAddPatient"
+                            >
+                                + Add patient
+                            </button>
+
+                        </div>
+
+                        <div
+                            id="dashboardPatients"
+                            class="patient-list"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="panel safety-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="eyebrow">
+                                    SAFETY
+                                </span>
+
+                                <h3>
+                                    Safety center
+                                </h3>
+
+                            </div>
+
+                            <div class="safe-status">
+                                ● Normal
+                            </div>
+
+                        </div>
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                ✓
+                            </div>
+
+                            <h4>
+                                No active alerts
+                            </h4>
+
+                            <p>
+                                Medication interaction and
+                                adherence alerts will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PATIENTS -->
+
+            <section
+                id="patientsSection"
+                class="section hidden"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            PATIENT MANAGEMENT
+                        </p>
+
+                        <h2>
+                            Patients
+                        </h2>
+
+                    </div>
+
+                    <button
+                        class="primary-button compact"
+                        id="addPatientButton"
+                    >
+                        + Add patient
+                    </button>
+
+                </div>
+
+                <div
+                    id="patientsGrid"
+                    class="patients-grid"
+                ></div>
+
+            </section>
+
+
+            <!-- MEDICATIONS -->
+
+            <section
+                id="medicationsSection"
+                class="section hidden"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            MEDICATION MANAGEMENT
+                        </p>
+
+                        <h2>
+                            Medications
+                        </h2>
+
+                    </div>
+
+                    <button
+                        class="primary-button compact"
+                        id="addMedicationButton"
+                    >
+                        + Add medication
+                    </button>
+
+                </div>
+
+                <div
+                    id="medicationContent"
+                    class="medication-layout"
+                >
+
+                    <div class="panel">
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                💊
+                            </div>
+
+                            <h4>
+                                Select a patient
+                            </h4>
+
+                            <p>
+                                Choose a patient from the
+                                Patients section to view medications.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- HISTORY -->
+
+            <section
+                id="historySection"
+                class="section hidden"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            MEDICATION RECORDS
+                        </p>
+
+                        <h2>
+                            Medication History
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            ◷
+                        </div>
+
+                        <h4>
+                            No medication history yet
+                        </h4>
+
+                        <p>
+                            Dose records will appear here
+                            once medication tracking is enabled.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- PATIENT MODAL -->
+
+<div
+    id="patientModal"
+    class="modal hidden"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    PATIENT
+                </p>
+
+                <h3>
+                    Add patient
+                </h3>
+
+            </div>
+
+            <button
+                class="close-button"
+                id="closePatientModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <form id="patientForm">
+
+            <label>
+                Full name
+            </label>
+
+            <input
+                id="patientName"
+                required
+                placeholder="Patient full name"
+            >
+
+            <label>
+                Date of birth
+            </label>
+
+            <input
+                id="patientDOB"
+                type="date"
+            >
+
+            <label>
+                Phone
+            </label>
+
+            <input
+                id="patientPhone"
+                placeholder="+234..."
+            >
+
+            <label>
+                Emergency contact
+            </label>
+
+            <input
+                id="emergencyContact"
+                placeholder="Contact name"
+            >
+
+            <label>
+                Emergency phone
+            </label>
+
+            <input
+                id="emergencyPhone"
+                placeholder="+234..."
+            >
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelPatient"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Save patient
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- MEDICATION MODAL -->
+
+<div
+    id="medicationModal"
+    class="modal hidden"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    MEDICATION
+                </p>
+
+                <h3>
+                    Add medication
+                </h3>
+
+            </div>
+
+            <button
+                class="close-button"
+                id="closeMedicationModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <form id="medicationForm">
+
+            <label>
+                Patient
+            </label>
+
+            <select
+                id="medicationPatient"
+                required
+            ></select>
+
+            <label>
+                Medication name
+            </label>
+
+            <input
+                id="medicationName"
+                required
+                placeholder="e.g. Metformin"
+            >
+
+            <label>
+                Dosage
+            </label>
+
+            <input
+                id="medicationDosage"
+                required
+                placeholder="e.g. 500 mg"
+            >
+
+            <label>
+                Frequency
+            </label>
+
+            <input
+                id="medicationFrequency"
+                required
+                placeholder="e.g. Twice daily"
+            >
+
+            <label>
+                Schedule times
+            </label>
+
+            <div class="schedule-time-inputs" id="scheduleTimeInputs">
+                <div class="schedule-time-row">
+                    <input
+                        type="time"
+                        class="medication-time"
+                        value="08:00"
+                    >
+
+                    <button
+                        type="button"
+                        class="remove-time-button"
+                        aria-label="Remove time"
+                        onclick="removeScheduleTime(this)"
+                    >
+                        ×
+                    </button>
+                </div>
+            </div>
+
+            <button
+                type="button"
+                class="secondary-button add-time-button"
+                id="addScheduleTime"
+            >
+                + Add another time
+            </button>
+
+            <small class="form-hint">
+                Example: 08:00 AM, 12:00 PM, 08:00 PM
+            </small>
+
+            <label>
+                Quantity
+            </label>
+
+            <input
+                id="medicationQuantity"
+                type="number"
+                min="0"
+                value="0"
+            >
+
+            <label>
+                Instructions
+            </label>
+
+            <textarea
+                id="medicationInstructions"
+                placeholder="e.g. Take after meals"
+            ></textarea>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelMedication"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Save medication
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1216 @@
+:root {
+    --bg: #f5f7fb;
+    --surface: #ffffff;
+    --surface-soft: #f8fafc;
+    --text: #172033;
+    --muted: #748096;
+    --border: #e6eaf0;
+    --primary: #1677ff;
+    --primary-dark: #075ecf;
+    --success: #17a673;
+    --warning: #f59e0b;
+    --danger: #e5484d;
+    --shadow: 0 12px 35px rgba(20, 35, 60, 0.07);
+    --radius: 18px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--bg);
+    color: var(--text);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* APP */
+
+.app {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 260px;
+    min-height: 100vh;
+    background: #fff;
+    border-right: 1px solid var(--border);
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 10px;
+    margin-bottom: 45px;
+}
+
+.brand-icon,
+.auth-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.brand span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nav-item {
+    border: 0;
+    background: transparent;
+    color: #6d778b;
+    padding: 13px 15px;
+    border-radius: 12px;
+    text-align: left;
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    font-weight: 600;
+}
+
+.nav-item span {
+    width: 20px;
+    text-align: center;
+}
+
+.nav-item:hover {
+    background: #f3f7ff;
+    color: var(--primary);
+}
+
+.nav-item.active {
+    background: #eaf3ff;
+    color: var(--primary);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.security-box {
+    background: #f5f9ff;
+    border: 1px solid #e3efff;
+    padding: 14px;
+    border-radius: 14px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.security-icon {
+    color: var(--success);
+    font-weight: 800;
+}
+
+.security-box strong {
+    display: block;
+    font-size: 12px;
+}
+
+.security-box small {
+    display: block;
+    color: var(--muted);
+    margin-top: 4px;
+    font-size: 10px;
+}
+
+.logout-button {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: white;
+    color: var(--danger);
+    font-weight: 600;
+}
+
+
+/* MAIN */
+
+.main {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+}
+
+.topbar {
+    height: 90px;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eyebrow {
+    margin: 0 0 5px;
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.topbar h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6f8fb;
+    border-radius: 12px;
+}
+
+.user-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #dcecff;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.user-info strong,
+.user-info span {
+    display: block;
+}
+
+.user-info strong {
+    font-size: 13px;
+}
+
+.user-info span {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 2px;
+}
+
+
+/* AUTH */
+
+.auth-screen {
+    min-height: calc(100vh - 90px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    background: white;
+    padding: 38px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.auth-logo {
+    margin: 0 auto 20px;
+}
+
+.auth-card h2 {
+    text-align: center;
+    margin: 0;
+    font-size: 27px;
+}
+
+.auth-card > p {
+    text-align: center;
+    color: var(--muted);
+    margin: 8px 0 25px;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 15px 0 7px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 12px 13px;
+    outline: none;
+    background: white;
+    color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.08);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.primary-button,
+.secondary-button,
+.small-button {
+    border-radius: 11px;
+    padding: 12px 18px;
+    border: 0;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.primary-button {
+    background: var(--primary);
+    color: white;
+}
+
+.primary-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.secondary-button {
+    background: #f1f5f9;
+    color: var(--text);
+}
+
+.small-button {
+    padding: 9px 13px;
+    background: #eaf3ff;
+    color: var(--primary);
+}
+
+.compact {
+    padding: 10px 15px;
+}
+
+.auth-card .primary-button {
+    margin-top: 20px;
+}
+
+.divider {
+    text-align: center;
+    margin: 22px 0;
+    color: #a0a9b7;
+    font-size: 10px;
+}
+
+.text-button {
+    border: 0;
+    background: transparent;
+    color: var(--primary);
+    font-weight: 700;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.message {
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.message.error {
+    display: block;
+    background: #fff1f1;
+    color: var(--danger);
+}
+
+.message.success {
+    display: block;
+    background: #edfff7;
+    color: var(--success);
+}
+
+
+/* CONTENT */
+
+.application {
+    padding: 34px 40px 60px;
+}
+
+.section {
+    max-width: 1450px;
+    margin: auto;
+}
+
+.welcome {
+    background: linear-gradient(
+        120deg,
+        #edf6ff,
+        #f8fbff
+    );
+    border: 1px solid #dcecff;
+    border-radius: 22px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome h2 {
+    margin: 5px 0;
+    font-size: 29px;
+}
+
+.welcome p:last-child {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+.welcome-icon {
+    font-size: 70px;
+    opacity: 0.8;
+}
+
+
+/* STATS */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 20px rgba(20, 35, 60, 0.03);
+}
+
+.stat-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: #eaf3ff;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.stat-icon.warning {
+    background: #fff7e6;
+    color: var(--warning);
+}
+
+.stat-icon.success {
+    background: #e9faf4;
+    color: var(--success);
+}
+
+.stat-card span,
+.stat-card strong {
+    display: block;
+}
+
+.stat-card span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.stat-card strong {
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+
+/* PANELS */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 20px;
+}
+
+.panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.panel-header h3 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.patient-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.patient-row {
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.patient-row-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.patient-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: #eaf3ff;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.patient-row strong {
+    display: block;
+    font-size: 13px;
+}
+
+.patient-row small {
+    color: var(--muted);
+}
+
+.patient-row button {
+    border: 0;
+    background: #f3f7ff;
+    color: var(--primary);
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-weight: 700;
+}
+
+.safe-status {
+    color: var(--success);
+    background: #ecfaf5;
+    border-radius: 20px;
+    padding: 7px 10px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.empty-state {
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.empty-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 17px;
+    background: #f0f6ff;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.empty-state h4 {
+    margin: 5px 0;
+}
+
+.empty-state p {
+    max-width: 360px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* SECTIONS */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.patients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.patient-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px;
+}
+
+.patient-card-top {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+}
+
+.patient-card h3 {
+    margin: 0;
+}
+
+.patient-card small {
+    color: var(--muted);
+}
+
+.patient-details {
+    margin: 20px 0;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+}
+
+.patient-details p {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 8px 0;
+}
+
+.patient-card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.patient-card-actions button {
+    flex: 1;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 700;
+}
+
+.view-medications {
+    background: #eaf3ff;
+    color: var(--primary);
+}
+
+
+/* MEDICATION */
+
+.medication-card {
+    border: 1px solid var(--border);
+    padding: 18px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.medication-card h4 {
+    margin: 0 0 5px;
+}
+
+.medication-card p {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 4px 0;
+}
+
+.medication-badge {
+    background: #edf9f4;
+    color: var(--success);
+    border-radius: 20px;
+    padding: 6px 9px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* MODALS */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 25, 40, 0.42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 100;
+}
+
+.modal-card {
+    background: white;
+    width: 100%;
+    max-width: 510px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.close-button {
+    border: 0;
+    background: #f3f5f8;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    font-size: 22px;
+    color: var(--muted);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 25px;
+}
+
+.modal-actions button {
+    width: auto;
+}
+
+
+/* TOAST */
+
+.toast {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background: #172033;
+    color: white;
+    padding: 13px 17px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+    transition: 0.25s;
+    z-index: 200;
+    font-size: 13px;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* MOBILE */
+
+.mobile-brand {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .patients-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 760px) {
+
+    .sidebar {
+        width: 70px;
+        padding: 20px 8px;
+    }
+
+    .brand {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .brand > div:last-child {
+        display: none;
+    }
+
+    .nav-item {
+        justify-content: center;
+        padding: 13px 5px;
+    }
+
+    .nav-item {
+        font-size: 0;
+    }
+
+    .nav-item span {
+        font-size: 17px;
+    }
+
+    .security-box,
+    .logout-button {
+        font-size: 0;
+    }
+
+    .main {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+    }
+
+    .topbar {
+        padding: 15px 20px;
+    }
+
+    .topbar h2,
+    .eyebrow {
+        font-size: 18px;
+    }
+
+    .user-info,
+    .notification {
+        display: none;
+    }
+
+    .application {
+        padding: 20px;
+    }
+
+    .welcome {
+        padding: 22px;
+    }
+
+    .welcome-icon {
+        display: none;
+    }
+
+    .welcome h2 {
+        font-size: 23px;
+    }
+
+    .stats-grid,
+    .patients-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 23px;
+    }
+
+    .auth-screen {
+        padding: 20px;
+    }
+
+    .auth-card {
+        padding: 25px;
+    }
+}
+/* =========================================================
+   MEDICATION SCHEDULE & DOSE TRACKING
+   ========================================================= */
+
+.schedule-section {
+    margin-top: 28px;
+}
+
+.schedule-heading {
+    margin-bottom: 16px;
+}
+
+.today-date {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.schedule-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    display: grid;
+    grid-template-columns: 105px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 15px 38px rgba(20, 35, 60, 0.09);
+}
+
+.schedule-time {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.schedule-medication {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.schedule-medication-icon {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    border-radius: 14px;
+    background: #eaf3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.schedule-medication h4 {
+    margin: 0 0 5px;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.schedule-medication p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.schedule-status {
+    min-width: 150px;
+    text-align: right;
+}
+
+.schedule-status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+.status-now {
+    background: #fff3df;
+    color: #c76b00;
+}
+
+.status-upcoming {
+    background: #eef2f7;
+    color: #667085;
+}
+
+.status-taken {
+    background: #e8faf2;
+    color: var(--success);
+}
+
+.status-missed {
+    background: #fff0f0;
+    color: var(--danger);
+}
+
+.schedule-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 7px;
+    margin-top: 9px;
+}
+
+.dose-button {
+    border: 0;
+    border-radius: 9px;
+    padding: 8px 11px;
+    font: inherit;
+    font-size: 10px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.dose-button:hover {
+    transform: translateY(-1px);
+}
+
+.dose-button:active {
+    transform: translateY(0);
+}
+
+.taken-button {
+    background: #e8faf2;
+    color: var(--success);
+}
+
+.missed-button {
+    background: #fff0f0;
+    color: var(--danger);
+}
+
+.schedule-empty {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.schedule-empty .empty-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 12px;
+    border-radius: 15px;
+    background: #eaf3ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.schedule-empty h4 {
+    margin: 0 0 6px;
+    color: var(--text);
+    font-size: 15px;
+}
+
+.schedule-empty p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Medication form schedule-time controls */
+.schedule-time-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.schedule-time-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.schedule-time-row .medication-time {
+    flex: 1;
+    min-width: 0;
+}
+
+.schedule-time-row .remove-time-button {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface-soft);
+    color: var(--danger);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.schedule-time-row .remove-time-button:hover {
+    background: #fff0f0;
+    transform: translateY(-1px);
+}
+
+.add-time-button {
+    width: 100%;
+    margin-top: 9px;
+    justify-content: center;
+}
+
+.form-hint {
+    display: block;
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   RESPONSIVE SCHEDULE LAYOUT
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .schedule-card {
+        grid-template-columns: 90px minmax(0, 1fr);
+    }
+
+    .schedule-status {
+        grid-column: 2;
+        min-width: 0;
+        text-align: left;
+    }
+
+    .schedule-actions {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    .schedule-heading {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .today-date {
+        font-size: 11px;
+    }
+
+    .schedule-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .schedule-status {
+        grid-column: auto;
+        width: 100%;
+        text-align: left;
+    }
+
+    .schedule-actions {
+        justify-content: stretch;
+    }
+
+    .dose-button {
+        flex: 1;
+        min-height: 36px;
+    }
+}
